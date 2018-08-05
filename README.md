@@ -20,9 +20,5 @@
   * [x] /api/post/:id Get a particular post
   * [ ] Tests
 
-* [ ] Setup post view backend
-  * [ ] Some way to query the db with filters on posts
-  * [ ] Tests
-
 * [ ] AngularJS Front End
 * [ ] Deploy

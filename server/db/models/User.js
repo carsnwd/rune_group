@@ -14,11 +14,7 @@ var userSchema = new Schema({
   avatar:{
     type: String,
     required: true
-  },
-  posts:[{
-    type: Schema.Types.ObjectId,
-    ref: 'posts'
-  }]
+  }
 });
 
 var user = mongoose.model('users', userSchema);
