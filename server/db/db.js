@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var mongodb = 'mongodb://127.0.0.1/rune-group';
-mongoose.connect(mongodb);
+var url = 'mongodb://localhost:27017/rune-group';
+mongoose.connect(url);
 mongoose.Promise = global.Promise;
 
 var db = mongoose.connection;

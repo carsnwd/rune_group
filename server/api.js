@@ -3,14 +3,15 @@ var router = express.Router();
 var User = require('./db/models/User');
 var Post = require('./db/models/Post');
 
-router.post('/regiser', function(req, res){
+router.post('/register', function(req, res){
   var user = new User(req.body);
   user.save()
     .then(function(item){
-      res.status(200).send({message: "User successfully created."});
+      res.status(200).send({message: "User successfully created.", status: 200});
     })
     .catch(function(err){
-      res.status(400).send("User failed to save to database");
+      console.log(err);
+      res.status(400).send({message: "User failed to save to database", status: 400});
     });
 });
 
@@ -18,9 +19,9 @@ router.get('/user/:username', function(req, res){
   var query = User.findOne({"username": req.params.username});
   query.exec(function(err, user){
     if(user === null){
-      res.status(404).send('User not found');
+      res.status(404).send({message: "User not found", status: 404});
     }else{
-    res.status(200).json(user);
+    res.status(200).send(user);
     }
   });
 });
@@ -29,21 +30,32 @@ router.post('/create_post', function(req, res){
   var post = new Post(req.body);
   post.save()
     .then(function(item){
-      res.status(200).send({message: "Post successfully created."});
+      res.status(200).send({message: "Post successfully created.", status: 200});
     })
     .catch(function(err){
       console.log(err);
-      res.status(400).send("Post failed to save to database");
+      res.status(400).send({message: "Post failed to save to database", status: 400});
     });
 });
 
-router.get('/post/:id', function(req, res){
+router.get('/post/id/:id', function(req, res){
   var query = Post.findOne({"_id":req.params.id});
   query.exec(function(err, post){
     if(post === null){
-      res.status(404).send('Post not found');
+      res.status(404).send({message: 'Post not found', status: 404});
     }else{
-    res.status(200).json(post);
+      res.status(200).send(post);
+    }
+  });
+});
+
+router.get('/post/boss/:boss', function(req, res){
+  var query = Post.find({"boss":req.params.boss});
+  query.exec(function(err, post){
+    if(post === null){
+      res.status(404).send({message: 'Post not found', status: 404});
+    }else{
+    res.status(200).send(post);
     }
   });
 });

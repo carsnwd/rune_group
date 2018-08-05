@@ -1,4 +1,5 @@
 var express = require('express');
+var db = require('./db/db');
 var api = require('./api');
 var app = express();
 
@@ -8,7 +9,7 @@ app.use('/api', api);
 
 //Error handling
 app.use(function (err, req, res, next){
-  console.error(err.stack);
+  console.log(err.stack);
   res.status(500).send('Something went wrong, internal server error.');
 });
 
