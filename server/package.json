@@ -1,0 +1,31 @@
+{
+  "name": "rune_group",
+  "version": "1.0.0",
+  "description": "A runescape group up app prototype",
+  "main": "client/app.js",
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carsnwd/rune_group.git"
+  },
+  "author": "Carson Wood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carsnwd/rune_group/issues"
+  },
+  "homepage": "https://github.com/carsnwd/rune_group#readme",
+  "dependencies": {
+    "bower": "^1.8.4",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.6",
+    "shortid": "^2.2.12"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
