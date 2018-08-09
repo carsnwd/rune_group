@@ -23,4 +23,9 @@
   * [ ] Tests ❗
 
 * [ ] AngularJS Front End
+  * [ ] Routing
+  * [ ] Form validation
+  * [ ] Filter/Search of posts
+  * [ ] Navbar 
+  * ❓
 * [ ] Deploy
