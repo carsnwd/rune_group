@@ -12,7 +12,7 @@
 
 * [ ] Setup post creation and management
   * [ ] Creates a Post Object in MongoDB with Post model
-    * [...] Support time available. ❗
+    * [ ] Support time available. ❗
   * [x] /api/create_post a POST route to create a new post
   * [ ] /api/create_post POST as a protected route to make new posts
     * [ ] Authorizes the JWT
